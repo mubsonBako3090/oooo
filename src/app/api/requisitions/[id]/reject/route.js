@@ -1,5 +1,5 @@
-import {{ NextResponse }} from 'next/server';
+import { NextResponse } from 'next/server';
 
-export async function GET(request, { params }) {{
-  return NextResponse.json({{ status: 'ok', path: 'src/app/api/requisitions/[id]/reject/route.js' }});
-}}
+export async function GET(request, { params }) {
+  return NextResponse.json({ status: 'ok', path: 'src/app/api/requisitions/[id]/reject/route.js' });
+}
