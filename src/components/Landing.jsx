@@ -1,40 +1,154 @@
-export default function HomePage() {
+"use client";
+
+import Link from "next/link";
+
+export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
+
       {/* NAVBAR */}
-      <header className="flex justify-between items-center px-8 py-4 bg-white shadow">
-        <h1 className="text-xl font-bold text-blue-700">
+      <header className="flex justify-between items-center px-8 py-5 backdrop-blur-md bg-white/5 border-b border-white/10">
+        <h1 className="text-xl font-bold tracking-wide">
           ProcureSys
         </h1>
 
-        <a
+        <Link
           href="/login"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="px-4 py-2 rounded-lg bg-white text-blue-700 font-medium hover:scale-105 transition"
         >
           Login
-        </a>
+        </Link>
       </header>
 
       {/* HERO */}
       <section className="flex flex-col items-center justify-center text-center flex-1 px-6">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">
-          Streamline Procurement Across Your Institution
+
+        <h2 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-blue-300 to-cyan-200 text-transparent bg-clip-text animate-fade-in">
+          Smarter Procurement <br /> Starts Here
         </h2>
 
-        <p className="text-gray-600 max-w-2xl mb-6">
-          Manage requisitions, approvals, budgets, and vendor processes in one
-          unified platform designed for transparency and efficiency.
+        <p className="max-w-2xl text-gray-300 mb-10 text-lg animate-fade-in delay-200">
+          A modern procurement platform for institutions to manage requisitions,
+          approvals, budgets, and vendors with complete transparency and control.
         </p>
 
-        <div className="flex gap-4">
-          <a
-            href="/login"
-            className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700"
-          >
-            Get Started
-          </a>
+        {/* ROLE-BASED SHORTCUTS */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10 w-full max-w-4xl animate-fade-in delay-300">
 
+          <Link href="/login?role=staff">
+            <div className="p-6 rounded-xl bg-white/10 backdrop-blur hover:bg-white/20 transition transform hover:-translate-y-1 cursor-pointer">
+              <h3 className="text-xl font-semibold mb-2">Staff</h3>
+              <p className="text-gray-300 text-sm">
+                Create and track requisitions بسهولة
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/login?role=hod">
+            <div className="p-6 rounded-xl bg-white/10 backdrop-blur hover:bg-white/20 transition transform hover:-translate-y-1 cursor-pointer">
+              <h3 className="text-xl font-semibold mb-2">HOD</h3>
+              <p className="text-gray-300 text-sm">
+                Review and approve department requests
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/login?role=admin">
+            <div className="p-6 rounded-xl bg-white/10 backdrop-blur hover:bg-white/20 transition transform hover:-translate-y-1 cursor-pointer">
+              <h3 className="text-xl font-semibold mb-2">Admin</h3>
+              <p className="text-gray-300 text-sm">
+                Manage users, institutions, and reports
+              </p>
+            </div>
+          </Link>
+
+        </div>
+
+        {/* CTA */}
+        <Link
+          href="/login"
+          className="px-8 py-4 rounded-xl bg-blue-500 hover:bg-blue-600 font-semibold text-lg shadow-lg hover:shadow-xl transition transform hover:scale-105"
+        >
+          Get Started
+        </Link>
+      </section>
+
+      {/* FEATURES */}
+      <section className="py-16 px-8 bg-white/5 backdrop-blur border-t border-white/10">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          {[
+            {
+              title: "Requisition Management",
+              desc: "Create, track, and manage procurement requests efficiently.",
+            },
+            {
+              title: "Approval Workflows",
+              desc: "Multi-level approvals with full audit transparency.",
+            },
+            {
+              title: "Budget Control",
+              desc: "Prevent overspending with real-time budget tracking.",
+            },
+            {
+              title: "Vendor Management",
+              desc: "Centralized vendor database and sourcing.",
+            },
+            {
+              title: "LPO Generation",
+              desc: "Generate purchase orders instantly.",
+            },
+            {
+              title: "Reports & Analytics",
+              desc: "Export insights in PDF and Excel formats.",
+            },
+          ].map((f, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-xl bg-white/10 hover:bg-white/20 transition transform hover:-translate-y-1"
+            >
+              <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
+              <p className="text-gray-300 text-sm">{f.desc}</p>
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="text-center py-6 text-gray-400 text-sm">
+        © {new Date().getFullYear()} ProcureSys. All rights reserved.
+      </footer>
+
+      {/* ANIMATIONS */}
+      <style jsx global>{`
+        .animate-fade-in {
+          animation: fadeIn 0.8s ease forwards;
+          opacity: 0;
+        }
+
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+          animation-delay: 0.4s;
+        }
+
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+        }
+      `}</style>
+    </div>
+  );
+        }
           <a
             href="#features"
             className="border border-gray-300 px-6 py-3 rounded hover:bg-gray-100"
