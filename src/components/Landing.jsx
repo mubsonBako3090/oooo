@@ -1,40 +1,116 @@
-'use client';
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      
+      {/* NAVBAR */}
+      <header className="flex justify-between items-center px-8 py-4 bg-white shadow">
+        <h1 className="text-xl font-bold text-blue-700">
+          ProcureSys
+        </h1>
 
-import { useState } from 'react';
-import styles from './Landing.module.css';
+        <a
+          href="/login"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Login
+        </a>
+      </header>
 
-const Landing = () => {
-  const [formData, setFormData] = useState({
-    requesterName: '',
-    department: '',
-    itemName: '',
-    quantity: '',
-    urgency: 'normal',
-    notes: ''
-  });
+      {/* HERO */}
+      <section className="flex flex-col items-center justify-center text-center flex-1 px-6">
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          Streamline Procurement Across Your Institution
+        </h2>
 
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+        <p className="text-gray-600 max-w-2xl mb-6">
+          Manage requisitions, approvals, budgets, and vendor processes in one
+          unified platform designed for transparency and efficiency.
+        </p>
 
-  const departments = ['Sales', 'Marketing', 'IT', 'Operations', 'HR', 'Finance'];
-  const urgencyLevels = [
-    { value: 'low', label: 'Low - Can wait 2+ weeks' },
-    { value: 'normal', label: 'Normal - 1 week' },
-    { value: 'high', label: 'High - 2-3 days' },
-    { value: 'urgent', label: 'Urgent - 24 hours' }
-  ];
+        <div className="flex gap-4">
+          <a
+            href="/login"
+            className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700"
+          >
+            Get Started
+          </a>
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+          <a
+            href="#features"
+            className="border border-gray-300 px-6 py-3 rounded hover:bg-gray-100"
+          >
+            Learn More
+          </a>
+        </div>
+      </section>
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+      {/* FEATURES */}
+      <section
+        id="features"
+        className="bg-white py-16 px-8 grid md:grid-cols-3 gap-8"
+      >
+        <div className="p-6 border rounded">
+          <h3 className="font-bold text-lg mb-2">
+            Requisition Management
+          </h3>
+          <p className="text-gray-600">
+            Create, track, and manage procurement requests with full visibility.
+          </p>
+        </div>
+
+        <div className="p-6 border rounded">
+          <h3 className="font-bold text-lg mb-2">
+            Multi-Level Approvals
+          </h3>
+          <p className="text-gray-600">
+            Seamless approval workflows across departments and leadership.
+          </p>
+        </div>
+
+        <div className="p-6 border rounded">
+          <h3 className="font-bold text-lg mb-2">
+            Budget Control
+          </h3>
+          <p className="text-gray-600">
+            Monitor spending and ensure procurement aligns with budgets.
+          </p>
+        </div>
+
+        <div className="p-6 border rounded">
+          <h3 className="font-bold text-lg mb-2">
+            Vendor Management
+          </h3>
+          <p className="text-gray-600">
+            Maintain vendor records and streamline procurement sourcing.
+          </p>
+        </div>
+
+        <div className="p-6 border rounded">
+          <h3 className="font-bold text-lg mb-2">
+            LPO Generation
+          </h3>
+          <p className="text-gray-600">
+            Automatically generate Local Purchase Orders with ease.
+          </p>
+        </div>
+
+        <div className="p-6 border rounded">
+          <h3 className="font-bold text-lg mb-2">
+            Reports & Analytics
+          </h3>
+          <p className="text-gray-600">
+            Gain insights with exportable reports and audit tracking.
+          </p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="text-center py-6 text-gray-500 text-sm">
+        © {new Date().getFullYear()} ProcureSys. All rights reserved.
+      </footer>
+    </div>
+  );
+}    setIsSubmitting(true);
     
     try {
       // Simulate API call - replace with your actual endpoint
