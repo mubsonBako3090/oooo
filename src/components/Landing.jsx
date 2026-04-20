@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import style from "./Landing.module.css"
 
 export default function Landing() {
   return (
