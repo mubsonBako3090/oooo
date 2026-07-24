@@ -1,0 +1,101 @@
+{
+      "name": "ksu-procurement",
+        "version": "1.0.0",
+          "description": "KSU Digital Procurement Requisition System - Kaduna State University",
+            "private": true,
+              "scripts": {
+                    "dev":   "next dev",
+                        "build": "next build",
+                            "start": "next start",
+                                "lint":  "next lint"
+              },
+                "dependencies": {
+                        "next":             "14.2.3",
+                            "react":            "^18.3.1",
+                                "react-dom":        "^18.3.1",
+                                    "mongoose":         "^8.3.4",
+                                        "bcryptjs":         "^2.4.3",
+                                            "jsonwebtoken":     "^9.0.2",
+                                                "nodemailer":       "^6.9.13",
+                                                    "pdfkit":           "^0.14.0",
+                                                        "cloudinary":       "^2.2.0",
+                                                            "axios":            "^1.7.2",
+                                                                "zustand":          "^4.5.2",
+                                                                    "react-hot-toast":  "^2.4.1",
+                                                                        "bootstrap":        "^5.3.3",
+                                                                            "bootstrap-icons":  "^1.11.3",
+                                                                                "date-fns":         "^3.6.0",
+                                                                                    "joi":              "^17.13.1"
+                },
+                  "devDependencies": {
+                        "eslint":                    "^8.57.0",
+                            "eslint-config-next":        "14.2.3"
+                  }
+}
+                  
+                
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+      "compilerOptions": {
+          "baseUrl": ".",
+              "paths": {
+                    "@/*":            ["./*"],
+                          "@/components/*": ["./components/*"],
+                                "@/models/*":     ["./models/*"],
+                                      "@/lib/*":        ["./lib/*"],
+                                            "@/services/*":   ["./services/*"],
+                                                  "@/utils/*":      ["./utils/*"],
+                                                        "@/hooks/*":      ["./hooks/*"],
+                                                              "@/store/*":      ["./store/*"]
+                                                                  }
+                                                                    }
+                                                                    }
+}
+
+
+
+
+
+# App
+NEXT_PUBLIC_APP_NAME=KSU Procurement System
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NODE_ENV=development
+
+# MongoDB
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ksu_procurement?retryWrites=true&w=majority
+
+# JWT
+JWT_SECRET=ksu_procurement_super_secret_jwt_key_2024
+JWT_EXPIRES_IN=7d
+
+# Email (Nodemailer)
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USER=procurement@ksu.edu.ng
+MAIL_PASS=your_gmail_app_password
+MAIL_FROM=KSU Procurement <procurement@ksu.edu.ng>
+
+# Termii SMS
+TERMII_API_KEY=your_termii_api_key
+TERMII_SENDER_ID=KSUProcure
+TERMII_BASE_URL=https://api.ng.termii.com/api
+
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
