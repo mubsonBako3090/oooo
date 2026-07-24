@@ -1,6 +1,6 @@
-import { requireAuth }          from '@/lib/auth';
-import { approveRequisition }   from '@/services/approval.service';
-import { successResponse, handleError } from '@/utils/apiResponse';
+import { requireAuth }          from '@/lib/auth.js';
+import { approveRequisition }   from '@/services/approval.service.js';
+import { successResponse, handleError } from '@/utils/apiResponse.js';
 
 export async function POST(request, { params }) {
   try {
