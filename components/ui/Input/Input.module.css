@@ -1,0 +1,52 @@
+.wrapper {
+      display:        flex;
+        flex-direction: column;
+          gap:            6px;
+          }
+
+          .label {
+            font-size:      11px;
+              font-weight:    600;
+                text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                    color:          var(--muted);
+                    }
+
+                    .inputWrapper {
+                      position: relative;
+                      }
+
+                      .icon {
+                        position:  absolute;
+                          left:      12px;
+                            top:       50%;
+                              transform: translateY(-50%);
+                                color:     var(--muted);
+                                  font-size: 15px;
+                                  }
+
+                                  .input {
+                                    width:         100%;
+                                      background:    var(--panel);
+                                        border:        1px solid var(--border);
+                                          border-radius: var(--radius);
+                                            padding:       10px 14px;
+                                              color:         var(--text);
+                                                font-family:   var(--font-main);
+                                                  font-size:     14px;
+                                                    outline:       none;
+                                                      transition:    border-color 0.2s;
+                                                      }
+
+                                                      .input.withIcon { padding-left: 38px; }
+
+                                                      .input:focus { border-color: var(--accent); }
+
+                                                      .input::placeholder { color: var(--muted); }
+
+                                                      .input.error { border-color: var(--red); }
+
+                                                      .errorMsg {
+                                                        font-size: 12px;
+                                                          color:     var(--red);
+                                                          }

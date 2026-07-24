@@ -1,0 +1,89 @@
+.btn {
+      display:         inline-flex;
+        align-items:     center;
+          justify-content: center;
+            gap:             8px;
+              border:          none;
+                border-radius:   var(--radius);
+                  font-family:     var(--font-main);
+                    font-weight:     600;
+                      cursor:          pointer;
+                        transition:      var(--transition);
+                          white-space:     nowrap;
+                            text-decoration: none;
+                            }
+
+                            .btn:disabled {
+                              opacity: 0.55;
+                                cursor:  not-allowed;
+                                }
+
+                                /* Variants */
+                                .primary {
+                                  background: var(--accent);
+                                    color:      #000;
+                                    }
+                                    .primary:hover:not(:disabled) {
+                                      background: #00a869;
+                                      }
+
+                                      .danger {
+                                        background: var(--red);
+                                          color:      #fff;
+                                          }
+                                          .danger:hover:not(:disabled) {
+                                            background: #c93535;
+                                            }
+
+                                            .ghost {
+                                              background: transparent;
+                                                color:      var(--text);
+                                                  border:     1px solid var(--border);
+                                                  }
+                                                  .ghost:hover:not(:disabled) {
+                                                    border-color: var(--accent);
+                                                      color:        var(--accent);
+                                                      }
+
+                                                      .gold {
+                                                        background: var(--gold);
+                                                          color:      #000;
+                                                          }
+                                                          .gold:hover:not(:disabled) {
+                                                            background: #d48f1a;
+                                                            }
+
+                                                            .blue {
+                                                              background: var(--blue);
+                                                                color:      #fff;
+                                                                }
+                                                                .blue:hover:not(:disabled) {
+                                                                  background: #2563eb;
+                                                                  }
+
+                                                                  .dark {
+                                                                    background: var(--card);
+                                                                      color:      var(--text);
+                                                                        border:     1px solid var(--border);
+                                                                        }
+                                                                        .dark:hover:not(:disabled) {
+                                                                          border-color: var(--accent);
+                                                                          }
+
+                                                                          /* Sizes */
+                                                                          .sm { font-size: 12px; padding:  6px 14px; }
+                                                                          .md { font-size: 13px; padding: 10px 20px; }
+                                                                          .lg { font-size: 15px; padding: 13px 28px; }
+
+                                                                          .fullWidth { width: 100%; }
+
+                                                                          /* Spinner */
+                                                                          .spinner {
+                                                                            width:        16px;
+                                                                              height:       16px;
+                                                                                border:       2px solid rgba(255,255,255,.3);
+                                                                                  border-top:   2px solid currentColor;
+                                                                                    border-radius:50%;
+                                                                                      animation:    spin .7s linear infinite;
+                                                                                        flex-shrink:  0;
+                                                                                        }

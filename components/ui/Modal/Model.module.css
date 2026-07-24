@@ -1,0 +1,56 @@
+.overlay {
+      position:        fixed;
+        inset:           0;
+          background:      rgba(0, 0, 0, 0.75);
+            display:         flex;
+              align-items:     center;
+                justify-content: center;
+                  z-index:         1050;
+                    padding:         20px;
+                      animation:       fadeIn 0.2s ease;
+                      }
+
+                      .modal {
+                        background:    var(--card);
+                          border:        1px solid var(--border);
+                            border-radius: var(--radius-lg);
+                              width:         100%;
+                                max-height:    90vh;
+                                  overflow-y:    auto;
+                                    animation:     fadeIn 0.25s ease;
+                                    }
+
+                                    .sm { max-width: 400px; }
+                                    .md { max-width: 560px; }
+                                    .lg { max-width: 760px; }
+                                    .xl { max-width: 960px; }
+
+                                    .header {
+                                      display:         flex;
+                                        align-items:     center;
+                                          justify-content: space-between;
+                                            padding:         20px 24px 16px;
+                                              border-bottom:   1px solid var(--border);
+                                              }
+
+                                              .title {
+                                                font-size:   16px;
+                                                  font-weight: 700;
+                                                    color:       var(--text);
+                                                      margin:      0;
+                                                      }
+
+                                                      .closeBtn {
+                                                        background:  none;
+                                                          border:      none;
+                                                            color:       var(--muted);
+                                                              font-size:   16px;
+                                                                cursor:      pointer;
+                                                                  padding:     4px 6px;
+                                                                    border-radius: 6px;
+                                                                      transition:  color 0.15s;
+                                                                        line-height: 1;
+                                                                        }
+                                                                        .closeBtn:hover { color: var(--red); }
+
+                                                                        .body { padding: 24px; }
